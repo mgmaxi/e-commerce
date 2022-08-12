@@ -1,11 +1,18 @@
-import React from 'react';
-import Categories from './components/categories/categories.js';
+import { Routes, Route } from 'react-router-dom';
+import Home from './routes/home/home';
+import Shop from './routes/shop/shop';
+import Navigation from './routes/navigation/navigation';
+import SignIn from './routes/sign-in/sign-in';
 
 const App = () => {
 	return (
-		<div>
-			<Categories />
-		</div>
+		<Routes>
+			<Route path="/" element={<Navigation />}>
+				<Route index element={<Home />} />
+				<Route path="shop" element={<Shop />} />
+				<Route path="sign-in" element={<SignIn />} />
+			</Route>
+		</Routes>
 	);
 };
 
