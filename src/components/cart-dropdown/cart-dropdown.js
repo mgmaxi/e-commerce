@@ -7,7 +7,7 @@ import Button from '../button/button';
 import './cart-dropdown.scss';
 
 const CartDropdown = () => {
-	const { cartItems } = useContext(CartContext);
+	const { cartItems, setIsCartOpen } = useContext(CartContext);
 
 	const navigate = useNavigate();
 
@@ -15,8 +15,15 @@ const CartDropdown = () => {
 		navigate('/checkout');
 	};
 
+	const closeCartModal = () => {
+		setIsCartOpen(false);
+	};
+
 	return (
 		<div className="cart-dropdown-container">
+			<div className="cart-btn-close" onClick={closeCartModal}>
+				&#10005;
+			</div>
 			<div className="cart-items">
 				{cartItems.length ? (
 					cartItems.map(cartItem => (
