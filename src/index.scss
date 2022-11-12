@@ -1,12 +1,11 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 20px 40px;
-  font-family: 'Roboto Flex', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto Flex', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,7 +15,15 @@ code {
     monospace;
 }
 
-a{
+a {
   text-decoration: none;
   color: #000;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
 }
